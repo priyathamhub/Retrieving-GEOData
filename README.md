@@ -13,10 +13,10 @@ You can re-start the process at any time by removing the file geodata.sqlite
 
 Run the geoload.py program. This program will read the inputlines in where.data and for each line check to see if it is already in the database and if we don't have the data for the location, call the geocoding API to retrieve the data and store it in the database.
 
-Here is a sample run after there is already some data in the
-database:
+Here is a sample run after there is already some data in the database:
 
 Mac: python3 geoload.py
+
 Win: geoload.py
 
 Found in database  Northeastern University
@@ -32,13 +32,19 @@ Found in database  UMD
 Found in database  Tufts University
 
 Resolving Monash University
+
 Retrieving http://py4e-data.dr-chuck.net/json?key=42&address=Monash+University
+
 Retrieved 2063 characters {    "results" : [
+
 {u'status': u'OK', u'results': ... }
 
 Resolving Kokshetau Institute of Economics and Management
+
 Retrieving http://py4e-data.dr-chuck.net/json?key=42&address=Kokshetau+Institute+of+Economics+and+Management
+
 Retrieved 1749 characters {    "results" : [
+
 {u'status': u'OK', u'results': ... }
 
 The first five locations are already in the database and so they are skipped.  The program scans to the point where it finds un-retrieved locations and starts retrieving them.
@@ -50,25 +56,35 @@ Once you have some data loaded into geodata.sqlite, you can visualize the data u
 A run of the geodump.py program is as follows:
 
 Mac: python3 geodump.py
+
 Win: geodump.py
 
 Northeastern University, 360 Huntington Avenue, Boston, MA 02115, USA 42.3396998 -71.08975
+
 Bradley University, 1501 West Bradley Avenue, Peoria, IL 61625, USA 40.6963857 -89.6160811
 ...
 Technion, Viazman 87, Kesalsaba, 32000, Israel 32.7775 35.0216667
+
 Monash University Clayton Campus, Wellington Road, Clayton VIC 3800, Australia -37.9152113 145.134682
+
 Kokshetau, Kazakhstan 53.2833333 69.3833333
 ...
+
 12 records written to where.js
+
 Open where.html to view the data in a browser
 
 The file (where.html) consists of HTML and JavaScript to visualize a Google Map.  It reads the most recent data in where.js to get the data to be visualized.  Here is the format of the where.js file:
 
 myData = [
+
 [42.3396998,-71.08975, 'Northeastern University, 360 Huntington Avenue, Boston, MA 02115, USA'],
+
 [40.6963857,-89.6160811, 'Bradley University, 1501 West Bradley Avenue, Peoria, IL 61625, USA'],
+
 [32.7775,35.0216667, 'Technion, Viazman 87, Kesalsaba, 32000, Israel'],
-   ...
+...
+
 ];
 
 This is a JavaScript list of lists.  The syntax for JavaScript list constants is very similar to Python so the syntax should be familiar to you.
