@@ -6,15 +6,6 @@ to clean up some user-entered geographic locations of
 university names and then placing the data on a Google
 Map.
 
-Note: Windows has difficulty in displaying UTF-8 characters
-in the console so for each command window you open, you may need
-to type the following command before running this code:
-
-    chcp 65001
-
-http://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how
-
-
 You should install the SQLite browser to view and modify
 the databases from:
 
@@ -44,10 +35,7 @@ the database.
 As of December 2016, the Google Geocoding APIs changed dramatically.
 They moved some functionality that we use from the Geocoding API
 into the Places API.  Also all the Google Geo-related APIs require an
-API key. To complete this assignment without a Google account,
-without an API key, or from a country that blocks
-access to Google, you can use a subset of that data which is
-available at:
+API key.
 
 http://py4e-data.dr-chuck.net/json
 
